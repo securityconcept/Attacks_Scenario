@@ -1,0 +1,67 @@
+Scenario-1: Suppose an attacker successfully logs into one of our servers by making multiple login failed attempts. Now attacker has access to our server so what does our analysis mean which commands we will use to investigate this scenario?
+
+When an attacker gains unauthorized access to a server through multiple login attempts or any other means, it's crucial to perform a thorough investigation to understand the extent of the breach and to mitigate further risks. Here's a step-by-step analysis and some commands you might use to investigate the scenario:
+
+1. Isolate the Server:
+•	Immediately disconnect the compromised server from the network to prevent further unauthorized access.
+•	Disable any remote access methods (SSH, RDP, etc.) to the server.
+
+2. Gather Information:
+•	Review server logs to identify the entry point and extent of the compromise. Common log files include:
+
+•	/var/log/auth.log (Linux)
+•	/var/log/secure (Linux)
+•	Event Viewer (Windows)
+
+•	Use the last command (Linux) or Event Logs (Windows) to see recent login activities.
+
+3. Preserve Evidence:
+•	Make a copy of relevant log files and system configurations for forensic analysis.
+•	Document timestamps and IP addresses associated with unauthorized access.
+
+4. Identify the Attack Vector:
+•	Determine how the attacker gained access:
+•	Was it through brute force password guessing?
+•	Did they exploit a vulnerability in a service or application?
+•	Was it through a phishing attack or social engineering?
+
+5. Assess the Impact:
+•	Determine what actions the attacker took on the server:
+•	Unauthorized data access, modification, or exfiltration.
+•	Creation of backdoors or additional user accounts.
+•	Installing malicious software or rootkits.
+
+6. Remove the Attacker:
+•	Disconnect the attacker if they are still connected.
+•	Change all compromised passwords and credentials.
+•	Remove any unauthorized accounts or backdoors.
+•	Apply security patches and updates to fix vulnerabilities.
+
+7. Investigate Logs:
+•	Analyze log files for any suspicious activities, such as unusual commands executed, unauthorized access attempts, or unusual network traffic.
+•	You can use tools like grep, awk, or log analysis software for this.
+
+8. Review System Files:
+•	Check system files and directories for any unauthorized changes.
+•	Use the diff command to compare files with known-good backups.
+
+9. Scan for Malware:
+•	Use antivirus and anti-malware tools to scan the server for malicious software.
+•	Look for unexpected processes or files.
+
+10. Harden Security:
+•	Apply security best practices to harden the server's configuration.
+•	Consider implementing two-factor authentication (2FA) for remote access.
+
+11. Report the Incident:
+•	Notify appropriate personnel, including your organization's security team and legal department.
+•	If required by law, report the breach to relevant authorities.
+
+12. Restore Services:
+•	Once you are confident that the server is clean and secure, you can bring it back online.
+
+13. Learn from the Incident:
+•	Conduct a post-incident review to understand how the breach occurred and what measures can be taken to prevent it in the future.
+Remember, handling a security incident requires expertise, and it's essential to involve your organization's security professionals or a third-party incident response team if needed. Always follow your organization's security incident response plan and legal requirements when investigating and responding to security breaches.
+
+
